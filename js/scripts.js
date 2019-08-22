@@ -4,6 +4,8 @@ $(document).ready(function() {
     $(".display").text("");
 
     var inputNumber = $("#userNumber").val();
+    var output = ""
+
     var numeralArray = [1000, 500, 100, 50, 10, 5, 1];
     var numeralArrayValues = [];
     var r = inputNumber
@@ -21,7 +23,10 @@ $(document).ready(function() {
       };
     };
 
+    numeralArrayValues.pop();
     numeralArrayValues.reverse();
+
+
     for (var i = 0; i < 10; i++) {
       if (i % 2 === 0) {
         if (numeralArrayValues[i] > 3) {
@@ -35,6 +40,7 @@ $(document).ready(function() {
         }
       };
     };
+
     numeralArrayValues.reverse();
 
     var romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
@@ -44,16 +50,17 @@ $(document).ready(function() {
       var val = numeralArrayValues[index];
       if (val > 0) {
         if (val >= 1) {
-          $(".display").append(numeral)
+          output += numeral;
         }
         if (val >= 2) {
-          $(".display").append(numeral)
+          output += numeral;
         }
         if (val >= 3) {
-          $(".display").append(numeral)
+          output += numeral;
         }
       };
       index += 1;
     });
+    $(".display").text(output);
   });
 });
