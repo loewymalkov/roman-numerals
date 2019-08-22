@@ -3,7 +3,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputNumber = $("#userNumber").val();
-    $(".display").text("hello");
+    $(".display").text("");
 
 
     var numeralArray = [1000, 500, 100, 50, 10, 5, 1];
@@ -44,78 +44,44 @@ $(document).ready(function() {
       };
     };
 
+    numeralArrayValues.reverse();
+
     console.log(numeralArrayValues);
 
-    // var adjustedValues = [];
-    //
-    // for (var i = 0; i < 10; i++) {
-    //   if (i % 2 === 0) {
-    //     var val = numeralArrayValues[i];
-    //     if (val > 3) {
-    //       adjustedValues.push(0);
-    //       adjustedValues.push(1);
-    //     } else {
-    //       adjustedValues.push(val);
-    //       adjustedValues.push(0);
-    //     };
-    //
-    //     if
-    //
-    //
-    //
-    //   } else {
-    //   };
-    // };
-    // console.log(adjustedValues);
+    var romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
+    var index = 0
+    romanNumerals.forEach(function(numeral) {
+      var val = numeralArrayValues[index];
+      if (val > 0) {
+        if (val >= 1) {
+          $(".display").append(numeral)
+        }
+        if (val >= 2) {
+          $(".display").append(numeral)
+        }
+        if (val >= 3) {
+          $(".display").append(numeral)
+        }
+
+      };
+      index += 1;
+    });
   });
 });
 
 
 
-    // i
-    // iv
-    // v
-    // ix
-    // x
-    // xl
-    // l
-    // xc
-    // c
-    // cd
-    // d
-    // cm
-    // m
-
-
-    //
-    // function catAdjustor() {
-    // if (i > 3) {
-    //   i + 1 = 1;
-    //   i = 0;
-    // }
-    // if ((i + 1 === 1) && (i + 2 === 1)) {
-    //   i + 3 += 1;
-    //   i + 1 = 0;
-    //   i + 2 = 0;
-    // }
-    //   }
-    //   if (xCat > 3){
-    //     xlCat = 1;
-    //     xCat = 0;
-    //   }
-    //   if ((xlCat === 1) && (lCat === 1)) {
-    //     xcCat += 1;
-    //     xlCat = 0;
-    //     xCat = 0;
-    //   }
-    //   if (cCat > 3){
-    //     cdCat = 1;
-    //     cCat = 0;
-    //   }
-    //   if ((cdCat === 1) && (dCat === 1)) {
-    //     cmCat += 1;
-    //     cdCat = 0;
-    //     dCat = 0;
-    //   }
-    // }
+// i
+// iv
+// v
+// ix
+// x
+// xl
+// l
+// xc
+// c
+// cd
+// d
+// cm
+// m
