@@ -3,55 +3,126 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputNumber = $("#userNumber").val();
+    $(".display").text(numeralCounter(inputNumber));
 
-    var iCat = "0";
-    var vCat = "0";
-    var xCat = "0";
-    var lCat = "0";
-    var cCat = "0";
-    var dCat = "0";
-    var mCat = "0";
+    var iCat = 0;
+    var ivCat = 0
+    var vCat = 0;
+    var ixCat = 0;
+    var xCat = 0;
+    var xl = 0;
+    var lCat = 0;
+    var xcCat = 0;
+    var cCat = 0;
+    var cdCat = 0;
+    var dCat = 0;
+    var cmCat = 0;
+    var mCat = 0;
+
+
+    // var iCat = 4;
+    // var ivCat = 0
+    // var vCat = 2;
+    // var ixCat = 0;
+    // var xCat = 3;
+    // var xl = 0;
+    // var lCat = 1;
+    // var xcCat = 0;
+    // var cCat = 0;
+    // var cdCat = 0;
+    // var dCat = 0;
+    // var cmCat = 0;
+    // var mCat = 0;
+
+    // function processor(number) {
+    //   numeralCounter(number);
+    //
+    // }
+
+
+
+
+
 
     function numeralCounter(number){
-      mNumber = number
-      m = inputNumber / 1000;
+      myNumber = number
+
+      m = myNumber / 1000;
       mCat = parseInt(m);
-      console.log("m: "+ m);
+      myNumber = number - (mCat * 1000)
+      console.log(myNumber);
+      console.log("m: "+ mCat);
 
-      dNumber = (m - mCat) * 1000;
-      d = dNumber / 500;
+      d = myNumber / 500;
       dCat = parseInt(d);
-      console.log("d: "+ d);
+      myNumber = myNumber - (dCat * 500)
+      console.log(myNumber);
+      console.log("d: "+ dCat);
 
-      cNumber = (d - dCat) * 500;
-      c = cNumber / 100;
+      c = myNumber / 100;
       cCat = parseInt(c);
-      console.log("c: "+ c);
+      myNumber = myNumber - (cCat * 100)
+      console.log(myNumber);
+      console.log("c: "+ cCat);
 
-      lNumber = (c - cCat) * 100;
-      l = lNumber / 50;
+      l = myNumber / 50;
       lCat = parseInt(l);
-      console.log("l: "+ l);
+      myNumber = myNumber - (lCat * 50)
+      console.log(myNumber);
+      console.log("l: "+ lCat);
 
-      xNumber = (l - lCat) * 50;
-      x = xNumber / 10;
+      x = myNumber / 10;
       xCat = parseInt(x);
-      console.log("x: "+ x);
+      myNumber = myNumber - (xCat * 10)
+      console.log(myNumber);
+      console.log("x: "+ xCat);
 
-      vNumber = (x - xCat) * 10;
-      v = vNumber / 5;
+      v = myNumber / 5;
       vCat = parseInt(v);
-      console.log("v: "+ v);
+      myNumber = myNumber - (vCat * 5)
+      console.log(myNumber);
+      console.log("v: "+ vCat);
 
       iNumber = (v - vCat) * 5;
-      i = iNumber;
+      i = myNumber;
       iCat = parseInt(i);
-      console.log("i: "+ i);
+      myNumber = myNumber - (iCat * 1);
+      console.log(myNumber);
+      console.log("i: "+ iCat);
 
       return " M" + mCat + " D" + dCat +" C" + cCat +" L" + lCat +" X" + xCat +" V" + vCat +" I" + iCat;
     };
 
-    $(".display").text(numeralCounter(inputNumber));
+    function catAdjustor() {
+      if (iCat > 3){
+        viCat = 1;
+        iCat = 0;
+      }
+      if ((ivCat === 1) && (vCat === 1)) {
+        ixCat += 1;
+        ivCat = 0;
+        vCat = 0;
+      }
+      if (xCat > 3){
+        xlCat = 1;
+        xCat = 0;
+      }
+      if ((xlCat === 1) && (lCat === 1)) {
+        xcCat += 1;
+        xlCat = 0;
+        xCat = 0;
+      }
+      if (cCat > 3){
+        cdCat = 1;
+        cCat = 0;
+      }
+      if ((cdCat === 1) && (dCat === 1)) {
+        cmCat += 1;
+        cdCat = 0;
+        dCat = 0;
+      }
+    }
+
 
   });
 });
