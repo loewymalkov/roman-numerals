@@ -1,17 +1,14 @@
 $(document).ready(function() {
   $("#userInput").submit(function(event) {
     event.preventDefault();
-
-    var inputNumber = $("#userNumber").val();
     $(".display").text("");
 
-
+    var inputNumber = $("#userNumber").val();
     var numeralArray = [1000, 500, 100, 50, 10, 5, 1];
     var numeralArrayValues = [];
     var r = inputNumber
 
     for (i = 0; i < 7; i++) {
-
       var x = r / numeralArray[i];
       var xCount = parseInt(x);
       if (xCount > 0) {
@@ -23,11 +20,8 @@ $(document).ready(function() {
         numeralArrayValues.push(0);
       };
     };
-    numeralArrayValues.pop();
+
     numeralArrayValues.reverse();
-    console.log(numeralArrayValues);
-
-
     for (var i = 0; i < 10; i++) {
       if (i % 2 === 0) {
         if (numeralArrayValues[i] > 3) {
@@ -39,14 +33,9 @@ $(document).ready(function() {
           numeralArrayValues[i + 1] = 0;
           numeralArrayValues[i + 2] = 0;
         }
-      } else {
-
       };
     };
-
     numeralArrayValues.reverse();
-
-    console.log(numeralArrayValues);
 
     var romanNumerals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
 
@@ -63,25 +52,8 @@ $(document).ready(function() {
         if (val >= 3) {
           $(".display").append(numeral)
         }
-
       };
       index += 1;
     });
   });
 });
-
-
-
-// i
-// iv
-// v
-// ix
-// x
-// xl
-// l
-// xc
-// c
-// cd
-// d
-// cm
-// m
