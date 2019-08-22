@@ -28,39 +28,45 @@ $(document).ready(function() {
     console.log(numeralArrayValues);
 
 
-    // for (var i = 0; i < 2; i + 1) {
-    //   if (i % 2 === 0) {
-    //     if (numeralArrayValues[i] > 3) {
-    //       numeralArrayValues[i + 1] += 1;
-    //       numeralArrayValues[i] = 0;
-    //     };
-    //     if ((numeralArrayValues[i + 1] === 1) && (numeralArrayValues[i + 2] === 1)) {
-    //       numeralArrayValues[i + 3] += 1;
-    //       numeralArrayValues[i + 1] = 0;
-    //       numeralArrayValues[i + 2] = 0;
-    //     }
-    //   } else {
-    //
-    //   };
-    // };
-
-    // console.log(numeralArrayValues);
-    var adjustedValues = [];
-
     for (var i = 0; i < 10; i++) {
       if (i % 2 === 0) {
-        var val = numeralArrayValues[i];
-        if (val > 3) {
-          adjustedValues.push(0);
-          adjustedValues.push(1);
-        } else {
-          adjustedValues.push(val);
-          adjustedValues.push(0);
+        if (numeralArrayValues[i] > 3) {
+          numeralArrayValues[i + 1] += 1;
+          numeralArrayValues[i] = 0;
         };
+        if ((numeralArrayValues[i + 1] === 1) && (numeralArrayValues[i + 2] === 1)) {
+          numeralArrayValues[i + 3] += 1;
+          numeralArrayValues[i + 1] = 0;
+          numeralArrayValues[i + 2] = 0;
+        }
       } else {
+
       };
     };
-    console.log(adjustedValues);
+
+    console.log(numeralArrayValues);
+
+    // var adjustedValues = [];
+    //
+    // for (var i = 0; i < 10; i++) {
+    //   if (i % 2 === 0) {
+    //     var val = numeralArrayValues[i];
+    //     if (val > 3) {
+    //       adjustedValues.push(0);
+    //       adjustedValues.push(1);
+    //     } else {
+    //       adjustedValues.push(val);
+    //       adjustedValues.push(0);
+    //     };
+    //
+    //     if
+    //
+    //
+    //
+    //   } else {
+    //   };
+    // };
+    // console.log(adjustedValues);
 
   });
 });
